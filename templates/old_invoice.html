@@ -1,0 +1,382 @@
+
+ <!DOCTYPE html>
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+
+  <script>
+    setTimeout(function () {
+      window.print();
+    }, 3000);
+  </script>
+
+  <title>Print Invoice</title>
+
+  <!-- Define Charset -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!-- Page Description and Author -->
+  <meta name="description" content="{{ app_name }}" />
+  <meta name="keywords" content="Courier Delivery & Logistic Company" />
+  <meta name="author" content="Viz">
+
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.4 -->
+  <link href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/https://www.expflingdelivery.com/css/bootstrap2.min.css" rel="stylesheet" type="text/css" />
+  <!-- Font Awesome Icons -->
+  <link href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <!-- Ionicons -->
+  <link href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+  <!-- Theme style -->
+  <!-- <link href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/https://www.expflingdelivery.com/css/print-invoice.min.css" rel="stylesheet" type="text/css" /> -->
+
+
+  <script src="barcode.html"></script>
+
+  <link rel="stylesheet" href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/{%static 'css/bootstrap.css' %}" type="text/css" />
+
+ <link rel="stylesheet" href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/{%static 'css/print_invoice.css' %}" type="text/css" />
+
+<style>
+  #original_badge{
+    position: absolute;
+    top: 22em;
+    right: 10em;
+  }
+</style>
+
+
+
+</head>
+
+<body style="background: #337ab7 !important;">
+
+
+
+
+  <div class="wrapper" id="background" style="width: 100%;">
+
+    <!-- Main content -->
+    <section class="invoice" style="background-color:#fff;
+        width: 80%;
+        margin: 0px auto;
+        padding: 2em;
+        font-size: 1.2em;
+        position: relative;
+    ">
+    <div id="original_badge">
+      <img src="{%static 'images/original2.png'%}" style=" height: 30em;" />
+    </div>
+      <!-- title row -->
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header" style="border:none !important;">
+            <div class="col-xs-12 col-md-6 mt-4">
+              <h4>
+                <center>
+                  <strong style="color:green;">{{ app_name }} Logistics & Delivery Company<br>
+                    Address: {{ address }}<br>
+                    Email: {{ email }}<br>
+                    Company Website: www.roundglobetransit.shop</strong>
+                </center>
+              </h4>
+            </div>
+
+
+            <div>
+              <img class="pull-right" src="{%static 'assets/barcode.png'%}" alt="" style="height:6em;width:16em;" />
+            </div>
+
+            <h3 style="color:rgb(206, 126, 35);"><strong>Air shipment tracking system,Invoice Print Out</strong>
+            </h3>
+            </span>
+
+          </h2>
+        </div><!-- /.col -->
+      </div>
+      <hr />
+
+
+
+      <div class="row mb-4">
+
+
+
+
+
+        <!-- /.col -->
+      </div>
+
+
+      <!-- info row -->
+      <div class="row invoice-info">
+        <div class="col-sm-4 invoice-col">
+          <strong style="color:blue;">LOCATIONS</strong>
+          <address>
+            <p>
+              <strong>
+                <i class="bi bi-geo-alt icon_label"></i>
+                {{ shipment.location.current_location }}
+              </strong>
+            </p>
+          </address>
+        </div><!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+          <strong style="color:blue;">TO (CONSIGNEE)</strong>
+          <address>
+            <h3><strong style="color:green;">&nbsp;&nbsp;{{ shipment.reciever.full_name }}</strong></h3><br>
+            <h3>Registered By: {{ shipment.registered_by }}</h3>
+
+            <b>Address:</b>&nbsp;&nbsp;{{ shipment.reciever.location }}<br />
+            <b>Phone:</b> &nbsp;&nbsp;{{ shipment.reciever.phone_number }}<br />
+
+            <b>Destination Office:</b>&nbsp;&nbsp;United State
+          </address>
+        </div><!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+
+          <br />
+          <b>Order ID:</b>&nbsp;&nbsp;{{ shipment.id }}<br />
+          <b>Est. Delivery Date:</b>&nbsp;{{shipment.location.last.city }}<br />
+          <b>Mode of Transport:</b>&nbsp;{{ shipment.mode_of_shipment}}<br />
+
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+
+
+      <hr />
+
+      <div class="row">
+
+
+        <div class="col-xs-12 col-md-6 table-responsive" >
+          <h4 class="text-primary text-center">Sender Details</h4>
+          <table class="table">
+
+            <tbody>
+              <tr>
+                <th>Full Name</th>
+                <td>{{ shipment.sender.full_name }}</td>
+              </tr>
+
+              <tr>
+                <th>Email</th>
+                <td>{{ shipment.sender.email }}</td>
+              </tr>
+
+
+              <tr>
+                <th>Phone Number</th>
+                <td>{{ shipment.sender.phone_number }}</td>
+              </tr>
+
+
+              
+
+              
+            </tbody>
+          </table>
+        </div>
+
+
+
+
+
+
+        <div class="col-xs-12 col-md-6 table-responsive" id="payment_table_div">
+          <h4 class="text-primary text-center">Reciever Details</h4>
+          <table class="table">
+
+            <tbody>
+              <tr>
+                <th>Full Name</th>
+                <td>{{ shipment.reciever.full_name }}</td>
+              </tr>
+
+              <tr>
+                <th>Email</th>
+                <td>{{ shipment.reciever.email }}</td>
+              </tr>
+
+
+              <tr>
+                <th>Phone Number</th>
+                <td>{{ shipment.reciever.phone_number }}</td>
+              </tr>
+
+
+              <tr>
+                <th>Location</th>
+                <td>{{ shipment.reciever.location }}</td>
+              </tr>
+
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+
+
+
+      
+      <!-- Table row -->
+      <div class="row">
+        <div class="col-xs-12 col-md-6 table-responsive">
+          <h4 class="text-primary text-center">Shipment Details</h4>
+          <table class="table">
+
+            <tbody>
+              <tr>
+                <th>Weight</th>
+                <td>{{ shipment.weight}}</td>
+              </tr>
+
+              <tr>
+                <th>Quantity</th>
+                <td>{{ shipment.quantity}}</td>
+              </tr>
+
+
+              <tr>
+                <th>Mode Of Shipment </th>
+                <td>{{ shipment.mode_of_shipment}}</td>
+              </tr>
+
+
+              <tr>
+                <th>Date For Pick Up</th>
+                <td>{{ shipment.shipment_pick_up_date}}</td>
+              </tr>
+
+              <tr>
+                <th>Shipment Type</th>
+                <td>{{ shipment.shipment_type}}</td>
+              </tr>
+
+
+              <tr>
+                <th>Comment</th>
+                <td>{{ shipment.comment}}</td>
+              </tr>
+
+
+              <tr>
+                <th>UUID</th>
+                <td><b>#{{ shipment.uuid}}</b></td>
+              </tr>
+
+              <tr>
+                <th>Destination</th>
+                <td>{{ shipment.destination }}</td>
+              </tr>
+
+              <tr>
+                <th>Created On</th>
+                <td>{{ shipment.date_created }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- /.col -->
+
+
+
+        <div class="col-xs-12 col-md-6 table-responsive" id="payment_table_div">
+          <h4 class="text-primary text-center">Payment Details</h4>
+          <table class="table">
+
+            <tbody>
+              <tr>
+                <th>Clearance Debt</th>
+                <td>{{ shipment.payments.clearance_debt}}</td>
+              </tr>
+
+              <tr>
+                <th>Recovery Debt</th>
+                <td>{{ shipment.payments.recovery_debt }}</td>
+              </tr>
+
+
+              <tr>
+                <th>Agency Debt</th>
+                <td>{{ shipment.payments.agency_debt }}</td>
+              </tr>
+
+
+              <tr>
+                <th>Requirements and Neccessities</th>
+                <td>{{ shipment.payments.requirements_and_neccessities }}</td>
+              </tr>
+
+              <tr>
+                <th>Auxillaries</th>
+                <td>{{ shipment.payments.auxillaries }}</td>
+              </tr>
+
+
+              <tr>
+                <th>Total Payment</th>
+                <td><b>$ {{ shipment.payments.get_payment_total }} </b></td>
+              </tr>
+
+
+              <tr>
+                <th>UUID</th>
+                <td><b>#{{ shipment.uuid}}</b></td>
+              </tr>
+
+              <tr>
+                <th>Destination</th>
+                <td>{{ shipment.destination }}</td>
+              </tr>
+
+              <tr>
+                <th>Created On</th>
+                <td>{{ shipment.date_created }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+
+
+        
+      </div><!-- /.row -->
+
+
+
+
+
+      <br>
+      <br>
+      <hr />
+      <div style="display: flex; justify-content: center;">
+        <div  style="text-align: center;">
+          <h4 class="text-primary text-center" class="lead"><strong>Payment Methods:</strong></h4>
+          <img style="width: 18em;
+              height: 7em;" src="{%static 'assets/secure_payment.png'%}" alt="Methods payments" />
+
+          <p class="lead"><strong>Official Stamp/ {{ shipment.shipment_pick_up_date }} </strong></p>
+          <!-- <img src="images/stamp1.png" alt="" height="100" /> -->
+        </div>
+
+
+
+
+
+
+      </div><!-- /.row -->
+    </section><!-- /.content -->
+  </div><!-- ./wrapper -->
+
+ 
+</body>
+
+</html> 

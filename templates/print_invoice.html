@@ -1,0 +1,254 @@
+{%load static%}
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>{{ app_name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- External CSS libraries -->
+    <link type="text/css" rel="stylesheet" href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/assets/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/assets/fonts/font-awesome/css/font-awesome.min.css">
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon" >
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/https://fonts.gstatic.com" crossorigin>
+    <link href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/assets/css/style.css">
+</head>
+<style>
+  #original_badge{
+    position: absolute;
+    top: 6em;
+    right: 10em;
+    z-index: 999999999;
+    filter: opacity(0.3);
+  }
+</style>
+<body>
+  <div id="original_badge">
+    <img src="{%static 'images/original2.png'%}" style=" height: 30em;" />
+  </div>
+
+<!-- Invoice 1 start -->
+<div class="invoice-1 invoice-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="invoice-inner clearfix">
+                    <div class="invoice-info clearfix" id="invoice_wrapper">
+                        <div class="invoice-headar">
+                            <div class="row g-0">
+                                <div class="col-sm-6">
+                                    <div class="invoice-logo">
+                                        <!-- logo started -->
+                                        <div class="logo">
+                                            <img style="margin-top:-2em;width:6em;height:6em;" src="{% static 'images/logo.png' %}" alt="logo">
+                                            <img style="width:20em;" src="https://hubpng.com/public/uploads/preview/png-barcode-photo-11584900667pc26mfqr42.png" />
+                                        </div>
+                                        <!-- logo ended -->
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 invoice-id">
+                                    <div class="info">
+                                        <h1 class="color-white inv-header-1">Invoice</h1>
+                                        <p class="color-white mb-1">Invoice Number <span>#{{ shipment.uuid|upper }}</span></p>
+                                        <p class="color-white mb-0">Invoice Date <span>21 Sep 2021</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invoice-top">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="invoice-number mb-30">
+                                        <h4 class="inv-title-1">Invoice To</h4>
+                                        <h2 class="name mb-10">{{ shipment.reciever.full_name }}</h2>
+                                        <p class="invo-addr-1">
+                                          {{ shipment.reciever.location }}<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="invoice-number mb-30">
+                                        <div class="invoice-number-inner">
+                                            <h4 class="inv-title-1">Invoice From</h4>
+                                            <h2 class="name mb-10">{{ app_name }}</h2>
+                                            <p class="invo-addr-1">
+                                                {{ address }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invoice-center">
+                            <div class="table-responsive">
+                                <table class="table mb-0 table-striped invoice-table">
+                                    <thead class="bg-active">
+                                    <tr class="tr">
+                                        <th>No.</th>
+                                        <th class="pl0 text-start">Item Description</th>
+                                        <th class="text-center">Price</th>
+                                        <th class="text-center">Quantity</th>
+                                        <th class="text-end">Amount</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="tr">
+                                        <td>
+                                            <div class="item-desc-1">
+                                                <span>01</span>
+                                            </div>
+                                        </td>
+                                        <td class="pl0">Clearance Debt</td>
+                                        <td class="text-center">${{ shipment.payments.clearance_debt}}</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-end">${{ shipment.payments.clearance_debt}}.00</td>
+                                    </tr>
+
+                                    <tr class="tr">
+                                      <td>
+                                          <div class="item-desc-1">
+                                              <span>02</span>
+                                          </div>
+                                      </td>
+                                      <td class="pl0">Recovery Debt</td>
+                                      <td class="text-center">${{ shipment.payments.recovery_debt}}</td>
+                                      <td class="text-center">1</td>
+                                      <td class="text-end">${{ shipment.payments.recovery_debt}}.00</td>
+                                  </tr>
+
+
+                                  <tr class="tr">
+                                    <td>
+                                        <div class="item-desc-1">
+                                            <span>03</span>
+                                        </div>
+                                    </td>
+                                    <td class="pl0">Agency Debt</td>
+                                    <td class="text-center">${{ shipment.payments.agency_debt }}</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-end">${{ shipment.payments.agency_debt }}.00</td>
+                                </tr>
+
+                                <tr class="tr">
+                                  <td>
+                                      <div class="item-desc-1">
+                                          <span>04</span>
+                                      </div>
+                                  </td>
+                                  <td class="pl0">Requirements and Neccessities</td>
+                                  <td class="text-center">${{ shipment.payments.requirements_and_neccessities }}</td>
+                                  <td class="text-center">1</td>
+                                  <td class="text-end">${{ shipment.payments.requirements_and_neccessities }}.00</td>
+                              </tr>
+
+
+                              <tr class="tr">
+                                <td>
+                                    <div class="item-desc-1">
+                                        <span>05</span>
+                                    </div>
+                                </td>
+                                <td class="pl0">Auxillaries</td>
+                                <td class="text-center">${{ shipment.payments.auxillaries }}</td>
+                                <td class="text-center">1</td>
+                                <td class="text-end">${{ shipment.payments.auxillaries }}.00</td>
+                            </tr>
+                                    
+
+                                    
+                                    <tr class="tr2">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-center">Tax</td>
+                                        <td class="text-end">$20.01</td>
+                                    </tr>
+                                    <tr class="tr2">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-center f-w-600 active-color">Grand Total</td>
+                                        <td class="f-w-600 text-end active-color">${{ shipment.payments.get_payment_total }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="invoice-bottom">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-8 col-sm-7">
+                                    <div class="mb-30 dear-client">
+                                        <h3 class="inv-title-1">Terms & Conditions</h3>
+                                        <p>All orders are EXW San Antonio, TX (EXW means that a buyer/reseller incurs the risks for bringing the goods to their final destination) any deviation needs to be done in writing.</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-4 col-sm-5">
+                                    <div class="mb-30 payment-method">
+                                        <h3 class="inv-title-1">Payment Method</h3>
+                                        <ul class="payment-method-list-1 text-14">
+                                          <img style="width: 16em;
+                                          height: 5em;" src="{%static 'assets/secure_payment.png'%}" alt="Methods payments" />
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invoice-contact clearfix">
+                            <div class="row g-0">
+                                <div class="col-lg-9 col-md-11 col-sm-12">
+                                    <div class="contact-info">
+                                        <a href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/tel:+55-4XX-634-7071"><i class="fa fa-phone"></i> {{ phone_number }}</a>
+                                        <a href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/tel:{{ email }}"><i class="fa fa-envelope"></i> {{ email }}</a>
+                                        <a href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/tel:{{ email }}" class="mr-0 d-none-580"><i class="fa fa-map-marker"></i> {{ address }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="invoice-btn-section clearfix d-print-none">
+                        <button type="button" onclick="handlePrint()" href="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/javascript:window.print()" class="btn btn-lg btn-print">
+                            <i class="fa fa-print"></i> Print Invoice
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'helpers/__helper_buttons__.html'%}
+<!-- Invoice 1 end -->
+
+<script src="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/assets/js/jquery.min.js"></script>
+<script src="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/assets/js/jspdf.min.js"></script>
+<script src="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/assets/js/html2canvas.js"></script>
+<script src="https://storage.googleapis.com/theme-vessel-items/checking-sites/invo-2-html/HTML/main/assets/js/app.js"></script>
+</body>
+<script>
+  function handlePrint(){
+    window.print();
+  }
+</script>
+</html>
+
+
+
+
+
+
+
+
+

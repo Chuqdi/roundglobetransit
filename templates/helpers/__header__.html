@@ -1,0 +1,428 @@
+{%load static %}
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{ app_name }}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/animate.min.css">
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/magnific-popup.css">
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/aos.css">
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/nice-select.css">
+  
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/meanmenu.css">
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/slick.css">
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/default.css">
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/style.css">
+  <link rel="stylesheet" href="https://themebeyond.com/html/startesk/startesk/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+
+  
+</head>
+
+<body>
+   <!-- Translator -->
+
+	<div id="google_translate_element"></div>
+	<script>
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({
+				pageLanguage: 'en'
+			}, 'google_translate_element');
+		}
+	</script>
+	<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+	<!-- END OF TRANSLATOR -->
+
+  <!-- preloader  -->
+  <div id="preloader">
+    <div id="ctn-preloader" class="ctn-preloader">
+      <div class="animation-preloader">
+        <div class="spinner"></div>
+        <div class="txt-loading">
+          <span data-text-preloader="R" class="letters-loading">
+            R
+          </span>
+
+          <span data-text-preloader="O" class="letters-loading">
+            O
+          </span>
+
+          <span data-text-preloader="U" class="letters-loading">
+            U
+          </span>
+
+          <span data-text-preloader="N" class="letters-loading">
+            N
+          </span>
+          <span data-text-preloader="D" class="letters-loading">
+            D
+          </span>
+
+          
+
+          <span data-text-preloader="G" class="letters-loading">
+            G
+          </span>
+          <span data-text-preloader="L" class="letters-loading">
+            L
+          </span>
+          <span data-text-preloader="O" class="letters-loading">
+            O
+          </span>
+          <span data-text-preloader="B" class="letters-loading">
+            B
+          </span>
+          <span data-text-preloader="E" class="letters-loading">
+            E
+          </span>
+
+
+          <span data-text-preloader="T" class="letters-loading">
+            T
+          </span>
+          <span data-text-preloader="R" class="letters-loading">
+            R
+          </span>
+          <span data-text-preloader="A" class="letters-loading">
+            A
+          </span>
+
+          <span data-text-preloader="N" class="letters-loading">
+            N
+          </span>
+          <span data-text-preloader="S" class="letters-loading">
+            S
+          </span>
+          <span data-text-preloader="I" class="letters-loading">
+            I
+          </span>
+          <span data-text-preloader="T" class="letters-loading">
+            T
+          </span>
+
+        </div>
+      </div>
+      <div class="loader">
+        <div class="row">
+          <div class="col-3 loader-section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-left">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-right">
+            <div class="bg"></div>
+          </div>
+          <div class="col-3 loader-section section-right">
+            <div class="bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- preloader end -->
+
+  <!-- header-start -->
+  <header>
+    <div class="header-top-wrap purple-bg d-none d-md-block">
+      <div class="container-fluid header-container-p">
+        <div class="row">
+          <div class="col-xl-6 col-lg-7 col-md-6">
+            <div class="header-contact">
+              <ul>
+                <li><i class="fas fa-headphones"></i>Call us {{phone_number}}</li>
+                <li><i class="far fa-envelope"></i><a
+                    href="https://themebeyond.com/html/startesk/startesk//cdn-cgi/l/email-protection"
+                    class="__cf_email__" data-cfemail="6a391e0b181e0b19012a03040c0544090507">{{ email }}</a>
+                </li>
+                <li><i class="fas fa-map-marker"></i>W84 wokin Street Park</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-5 col-md-6">
+            <div class="header-top-right d-flex justify-content-end align-items-center">
+              <div class="header-country">
+                <form action="#">
+                  <select name="name" class="selected">
+                    <option value="">New York</option>
+                    <option value="">Washington</option>
+                    <option value="">Lake</option>
+                    <option value="">Seventh</option>
+                  </select>
+                </form>
+              </div>
+              <div class="header-social">
+                <ul>
+                  <li>Follow us :</li>
+                  <li><a href="https://themebeyond.com/html/startesk/startesk/#"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li><a href="https://themebeyond.com/html/startesk/startesk/#"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://themebeyond.com/html/startesk/startesk/#"><i class="fab fa-pinterest-p"></i></a>
+                  </li>
+                  <li><a href="https://themebeyond.com/html/startesk/startesk/#"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="header-sticky" class="main-header">
+      <div class="container-fluid header-container-p">
+        <div class="row align-items-center">
+          <div class="col-lg-3 col-md-6">
+            <div class="logo">
+              <a href="/"><img src="{% static 'images/logo.png' %}" style="filter: invert(1) !important;" alt=""></a>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-6 d-none d-md-block">
+            <div class="menu-area">
+              <div class="main-menu">
+                <nav id="mobile-menu">
+                  <ul>
+
+                    <li id="nav_home">
+                      <a href="/">Home</a>
+                    </li>
+                    <li id="nav_about"><a href="{% url 'about_us' %}">About Us</a></li>
+                    <li id="nav_contact"><a href="{% url 'contact_us' %}">Contact Us</a></li>
+
+                    <!-- <li class="active"><a href="https://themebeyond.com/html/startesk/startesk/index.html">Home</a>
+                      <ul class="submenu">
+                        <li class="active"><a href="https://themebeyond.com/html/startesk/startesk/index.html">Home
+                            One</a></li>
+                        <li><a href="https://themebeyond.com/html/startesk/startesk/index-2.html">Home Two</a></li>
+                        <li><a href="https://themebeyond.com/html/startesk/startesk/index-3.html">Home Three</a></li>
+                      </ul>
+                    </li> -->
+                    
+                    
+                  </ul>
+                </nav>
+              </div>
+              <div class="header-search">
+                <a href="https://themebeyond.com/html/startesk/startesk/#" data-toggle="modal"
+                  data-target="#search-modal"><i class="flaticon-magnifying-glass"></i></a>
+              </div>
+              <div class="header-btn">
+                <a href="https://themebeyond.com/html/startesk/startesk/#" class="btn" data-toggle="modal"
+                  data-target="#exampleModalLong"><img
+                    src="https://themebeyond.com/html/startesk/startesk/img/icon/calculator-symbols.png" alt="icon">Get
+                  Fare Rate</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mobile-menu"></div>
+          </div>
+        </div>
+        <!-- Modal Search -->
+        <div class="modal fade" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <form>
+                <input type="text" placeholder="Search here...">
+                <button><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content fare-rate-modal">
+              <ul class="nav nav-tabs setup-panel">
+                <li class="nav-item single-steps">
+                  <a class="nav-link btn-amber" href="https://themebeyond.com/html/startesk/startesk/#step-1">Select
+                    Your Destination</a>
+                </li>
+                <li class="nav-item single-steps">
+                  <a class="nav-link btn-blue-grey" href="https://themebeyond.com/html/startesk/startesk/#step-2">ITEMS
+                    TO BE SHIPPED</a>
+                </li>
+                <li class="nav-item single-steps">
+                  <a class="nav-link btn-blue-grey"
+                    href="https://themebeyond.com/html/startesk/startesk/#step-3">tracking information</a>
+                </li>
+              </ul>
+              <form action="#" method="post">
+                <div class="single-setup" id="step-1">
+                  <div class="fare-rate-tab-content">
+                    <div class="modal-shipping-info">
+                      <ul>
+                        <li>
+                          <div class="shipping-step-count">
+                            <h5>A</h5>
+                          </div>
+                          <div class="shipping-address-form">
+                            <div class="shipping-country-box form-group">
+                              <label for="from-country">from country</label>
+                              <input type="text" required="required" id="from-country"
+                                placeholder="Select Your Destination">
+                            </div>
+                            <div class="shipping-address-box form-group">
+                              <label for="from-country-location">add your location</label>
+                              <input type="text" required="required" id="from-country-location"
+                                placeholder="Select Your Destination">
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="shipping-step-count">
+                            <h5>B</h5>
+                          </div>
+                          <div class="shipping-address-form">
+                            <div class="shipping-country-box form-group">
+                              <label for="to-country">TO country</label>
+                              <input type="text" required="required" id="to-country"
+                                placeholder="Select Your Destination">
+                            </div>
+                            <div class="shipping-address-box form-group">
+                              <label for="to-country-location">add your location</label>
+                              <input type="text" required="required" id="to-country-location"
+                                placeholder="Select Your Destination">
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="modal-shipping-more-list">
+                      <ul>
+                        <li><a href="https://themebeyond.com/html/startesk/startesk/#"><i
+                              class="flaticon-credit-card"></i> Don't have an account? No problem Pay by credit card or
+                            cash.</a></li>
+                        <li><a href="https://themebeyond.com/html/startesk/startesk/#"><i class="flaticon-sings"></i>
+                            Get a quick quote and start shipping</a></li>
+                        <li><a href="https://themebeyond.com/html/startesk/startesk/#"><i class="flaticon-track"></i>
+                            Consult your packaging and delivery options</a></li>
+                      </ul>
+                    </div>
+                    <button class="btn f-right nextBtn-2 btn-success" type="button">one more step</button>
+                  </div>
+                </div>
+                <div class="single-setup" id="step-2">
+                  <div class="fare-rate-tab-content">
+                    <div class="modal-shipping-details">
+                      <div class="modal-shipping-title">
+                        <h2>items <span>details</span></h2>
+                        <h2 class="f-right">total cost : <span>$ 19.00</span></h2>
+                      </div>
+                      <div class="shipping-details-info">
+                        <div class="single-shipping-details-box">
+                          <label for="packaging-size">packaging size</label>
+                          <select class="custom-select" id="packaging-size">
+                            <option selected="">Standart Size ( 42” x 36” )</option>
+                            <option>Standart Size ( 82” x 86” )</option>
+                            <option>Standart Size ( 102” x 165” )</option>
+                            <option>Standart Size ( 110” x 205” )</option>
+                            <option>Standart Size ( 120” x 250” )</option>
+                          </select>
+                        </div>
+                        <div class="single-shipping-details-box shipping-qty">
+                          <label for="QTY-number">QTY</label>
+                          <input type="number" value="1" id="QTY-number" required="required">
+                        </div>
+                        <div class="single-shipping-details-box shipping-weight">
+                          <label for="packaging-weight">TOTAL WEIGHT</label>
+                          <select class="custom-select" id="packaging-weight">
+                            <option selected="">KG</option>
+                            <option>20KG</option>
+                            <option>30KG</option>
+                            <option>50KG</option>
+                            <option>80KG</option>
+                            <option>100KG</option>
+                          </select>
+                        </div>
+                        <div class="single-shipping-details-box shipping-transport">
+                          <label for="cargo-transport">cargo transport</label>
+                          <select class="custom-select" id="cargo-transport">
+                            <option selected="">IN</option>
+                            <option>1500in</option>
+                            <option>2000in</option>
+                            <option>2500in</option>
+                            <option>3000in</option>
+                            <option>3500in</option>
+                            <option>4000in</option>
+                          </select>
+                        </div>
+                        <div class="single-shipping-details-box shipping-product">
+                          <label for="product-category">product category</label>
+                          <select class="custom-select" id="product-category">
+                            <option selected="">Glass Product</option>
+                            <option>Glass Product</option>
+                            <option>Glass Product</option>
+                            <option>Glass Product</option>
+                            <option>Glass Product</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" required="required" class="custom-control-input"
+                          id="customControlInline">
+                        <label class="custom-control-label" for="customControlInline">Logistics is generally the
+                          detailed organization and implementation of a complex operation. In a general business sense,
+                          logistics is the management of the flow of things between the point of origin and the
+                          point</label>
+                      </div>
+                    </div>
+                    <button class="btn f-left prevBtn-2 btn-success" type="button">Previous</button>
+                    <button class="btn f-right nextBtn-2 btn-success" type="button"><span>$19.00</span> Booking</button>
+                  </div>
+                </div>
+                <div class="single-setup" id="step-3">
+                  <div class="fare-rate-tab-content">
+                    <div class="modal-shipping-details">
+                      <div class="modal-shipping-title">
+                        <h2>tracking <span>information</span></h2>
+                      </div>
+                      <div class="f-left pr-20">
+                        <div class="shipping-details-info shipping-tracking-info">
+                          <div class="modal-tracking-info">
+                            <label for="invoice-id">invoice Id</label>
+                            <input type="text" id="invoice-id" placeholder="Enter Your Id">
+                          </div>
+                          <div class="modal-tracking-info">
+                            <label>Search invoice</label>
+                            <button class="btn nextBtn-2 btn-success">find your product</button>
+                          </div>
+                        </div>
+                        <div class="tracking-quots-board">
+                          <label>your happiness quotes</label>
+                          <div class="tracking-quots-board-info">
+                            <img src="https://themebeyond.com/html/startesk/startesk/img/bg/board_bg.jpg" alt="img">
+                            <h5>On Board Your Products. Now Product is
+                              Malaysia Ocean</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tracking-modal-map">
+                        <div id="contact-map"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header-start-end -->
+
+  <!-- main-area -->

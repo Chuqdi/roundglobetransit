@@ -1,0 +1,795 @@
+{%load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ScriptsBundle">
+    <title>{{ app_name }}</title>
+
+    <link rel="icon" href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/images/favicon.ico"
+        type="image/x-icon" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/bootstrap.css">
+
+    <link rel="stylesheet" href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/style.css">
+
+    <link rel="stylesheet"
+        href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/font-awesome.css" type="text/css">
+
+    <link rel="stylesheet"
+        href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/et-line-fonts.css" type="text/css">
+
+    <link href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/magnific-popup/magnific-popup.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css"
+        href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/owl.style.css">
+
+    <link
+        href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic,900italic,900,300,300italic"
+        rel="stylesheet" type="text/css">
+    <link
+        href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+        rel="stylesheet" type="text/css">
+
+    <link href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/flaticon.css" rel="stylesheet">
+
+    <link rel="stylesheet" id="color"
+        href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/colors/defualt.css">
+
+    <link rel="stylesheet" id="theme-color" type="text/css"
+        href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/#" />
+
+    <link href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/animate.min.css"
+        rel="stylesheet">
+
+    <link href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/css/bootstrap-dropdownhover.min.css"
+        rel="stylesheet">
+
+    <style>
+        .paid_shipment_table {
+            background-image: url("{%static 'images/paid.png'%}");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+
+        .un_paid_shipment_table {
+            background-image: url("{%static 'images/unpad.png'%}");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+        }
+
+        
+    </style>
+
+    <script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/modernizr.js"></script>
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <style>
+        .icon_label {
+            color: #b67601;
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="google_translate_element" style="background-color: white !important;"></div>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+    <div class="preloader"><span class="preloader-gif"></span></div>
+
+    <section class="top-bar">
+        <div class="container">
+            <div class="left-text nav-left pull-left">
+                <p><span>Opening Hours :</span> Monday to Saturday - 8am to 5pm</p>
+            </div>
+        </div>
+    </section>
+    <header class="header-area">
+
+        <div class="logo-bar">
+            <div class="container clearfix">
+
+                <div class="logo">
+                    <a href="/">
+                        <h3>
+                            {{ app_name }}
+                        </h3>
+                    </a>
+                </div>
+                <link rel="stylesheet"
+                    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+                    integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+                    crossorigin="anonymous">
+
+                <div class="information-content">
+
+                    <div class="info-box  hidden-sm">
+                        <div class="icon"><i class="bi bi-envelope"></i></div>
+                        <div class="text">EMAIL</div>
+                        {{ email }}
+                    </div>
+
+                    <div class="info-box">
+                        <div class="icon"><i class="bi bi-telephone-fill con_label"></i></div>
+                        <div class="text">Call Now</div>
+                        <a class="location"
+                            href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/#">{{ phone_number }}</a>
+                    </div>
+                    <div class="info-box">
+                        <div class="icon"><i class="bi bi-geo-alt"></i></div>
+                        <div class="text">Find Us</div>
+                        <a class="location" href="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/#">
+                            A108 Adam Street
+                            New York, NY 535022
+                            United States
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <section class="breadcrumbs-area parallex">
+        <div class="container">
+
+            <div class="row">
+                <div class="page-title">
+                    <div class="col-sm-12 col-md-6 page-heading text-left">
+                        <h3>track your order </h3>
+                        <h2>Order Tracking</h2>
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-right">
+                        <ul class="breadcrumbs">
+                            <li><a href="/">home</a>
+                            </li>
+                            <li><a href="#">tracking</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="order-tracking" class="section-padding-80">
+        <div class="container {%if shipment.is_paid %}paid_shipment_table{%else%}un_paid_shipment_table{%endif%}">
+
+            <div class="row">
+                <div class="col-sm-12 col-xs-12 col-md-12">
+
+
+
+                    <div class="tracking-search">
+                        <div class="input-group" id="adv-search">
+                            <input type="text" id="start_tracking_shipment_input" class="form-control"
+                                placeholder="Track Your Shipment" />
+                            <div class="input-group-btn">
+                                <div class="btn-group" role="group">
+                                    <div class="dropdown dropdown-lg">
+                                    </div>
+                                    <button type="button" id="start_tracking_shipment" class="btn btn-primary"><i
+                                            class="bi bi-send-check-fill"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                        .alert_div {
+                            background: #016db6;
+                            border: #ffecb5;
+                            padding: 2em;
+                            margin-bottom: 2em;
+                            text-align: center;
+                            color: white;
+
+                        }
+                    </style>
+                    {% if shipment.is_arrived %}
+                    <div class="alert_div" role="alert">
+                        <strong>Note!</strong> This shipment has arrived.
+                    </div>
+
+                    {%endif%}
+
+                    {% if shipment.is_paid %}
+                    <div class="alert_div" role="alert">
+                        <strong>Note!</strong> This shipment has been paid for.
+                    </div>
+                    {%endif%}
+                    <div style="width: 100%; display: flex; justify-content: center;">
+                        <a href="{% url 'print_invoice' shipment.uuid %}" class="btn btn-primary">Print Invoice <i
+                                class="bi bi-send-check-fill"></i></a>
+                    </div>
+                    <script data-cfasync="false"
+                        src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                    <script src="https://zoomcargo.s3.amazonaws.com/static/custom/js/track_shipment.js">
+                    </script>
+
+
+                    <div class="block-content" style="border: 1px solid #e1e1e1;
+                    box-shadow: -1px -2px 6px 3px #dfdfdf;
+                    margin-top: 2em;">
+                        {% if shipment.uuid == "zwahbve" %}
+                        <div style="display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;">
+                            <img src="{%static 'images/shipment_image.jpg'%}" style="    height: 15em;
+                        width: 15em;
+                        margin-top: 2em;
+                        " />
+                            <p class="text-center text-sm text-primary;" style="margin-bottom: 2em; font-size: 0.9em;">
+                                Shipment Package Image</p>
+
+                        </div>
+                        {%endif%}
+
+                        <div class="table-responsive">
+
+                            <div class="btn btn-primary form-control" style="margin-bottom: 1em;">
+                                Reciever Details
+                            </div>
+                            <div class="container clearfix">
+                                <div class="row">
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"> <i class="bi bi-geo-alt icon_label"></i></div>
+                                        <div class="text">
+                                            <h4><b>Full Name</b></h4>
+                                        </div>
+                                        {{ shipment.reciever.full_name }}
+                                    </div>
+
+                                    <div class="info-box info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="bi bi-telephone-fill icon_label"></i></div>
+                                        <div class="text">
+                                            <h4><b>Phone Number</b></h4>
+                                        </div>
+                                        {{ shipment.reciever.phone_number }}
+                                    </div>
+                                    <div class="info-box info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="bi bi-envelope icon_label"></i></div>
+                                        <div class="text">
+                                            <h4><b>Email</b></h4>
+                                        </div>
+                                        {{ shipment.reciever.email }}
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr />
+
+
+
+
+
+                            <div class="container clearfix mt-4">
+                                <div class="row">
+
+                                    <div class="info-box  col-md-6 col-sm-12 text-center">
+                                        <div class="icon"> <i class="bi bi-geo-alt icon_label"></i></div>
+                                        <div class="text">
+                                            <h4><b>Current Shipment Location</b></h4>
+                                        </div>
+                                        {{ shipment.location.current_location }}
+                                    </div>
+
+
+                                    <div class="info-box info-box  col-md-6 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-cart-arrow-down icon_label"
+                                                aria-hidden="true"></i></div>
+                                        <div class="text">
+                                            <h4><b>Deliverer</b></h4>
+                                        </div>
+                                        {{ shipment.deliverer.deliverer_name }}
+                                    </div>
+
+                                </div>
+                            </div>
+                            <hr />
+
+
+
+
+
+                            <div class="btn btn-primary form-control" style="margin-bottom: 1em;">
+                                Sender Details
+                            </div>
+                            <div class="container clearfix">
+                                <div class="row">
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-id-card icon_label" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h4><b>Full Name</b></h4>
+                                        </div>
+                                        {{ shipment.sender.full_name}}
+                                    </div>
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="bi bi-envelope icon_label"></i></div>
+                                        <div class="text">
+                                            <h4><b>Email</b></h4>
+                                        </div>
+                                        {{ shipment.sender.email}}
+                                    </div>
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-phone icon_label" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h4><b>Phone Number</b></h4>
+                                        </div>
+                                        {{ shipment.sender.phone_number }}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <hr />
+
+
+
+
+
+                            <div class="btn btn-primary form-control" style="margin-bottom: 1em;">
+                                Shipment Details
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-tencent-weibo icon_label"
+                                                aria-hidden="true"></i></div>
+                                        <div class="text">
+                                            <h4><b>Weight</b></h4>
+                                        </div>
+                                        {{ shipment.weight }}KG
+                                    </div>
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-battery-three-quarters icon_label"
+                                                aria-hidden="true"></i></div>
+                                        <div class="text">
+                                            <h4><b>Quantity</b></h4>
+                                        </div>
+                                        {{ shipment.quantity }}
+                                    </div>
+
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-truck icon_label" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h4><b>Mode Of Shipment</b></h4>
+                                        </div>
+                                        <strong style="text-transform: uppercase;">
+                                            {{ shipment.mode_of_shipment }}
+                                        </strong>
+                                    </div>
+
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-calendar icon_label" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h4><b>Shipment Pick Up Date</b></h4>
+                                        </div>
+                                        {{ shipment.shipment_pick_up_date }}
+                                    </div>
+
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-file-text icon_label" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h4><b>Shipment Type</b></h4>
+                                        </div>
+                                        {{ shipment.shipment_type }}
+                                    </div>
+
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-comments icon_label" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h4><b>Comment</b></h4>
+                                        </div>
+                                        {{ shipment.comment }}
+                                    </div>
+
+
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-universal-access icon_label"
+                                                aria-hidden="true"></i>
+                                            <div class="text">
+                                                <h4><b>UUID</b></h4>
+                                            </div>
+                                            {{ shipment.uuid }}
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-plane icon_label" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h4><b>Destination</b></h4>
+                                        </div>
+                                        {{ shipment.destination }}
+                                    </div>
+
+
+
+                                    <div class="info-box  col-md-4 col-sm-12 text-center">
+                                        <div class="icon"><i class="fa fa-calendar icon_label" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="text">
+                                            <h4><b>Date Created</b></h4>
+                                        </div>
+                                        {{ shipment.date_created }}
+                                    </div>
+
+
+                                    <div style="width:100%; display:flex;justify-content:center;">
+                                        {%if shipment.is_paid%}
+                                        <div class="badge badge-success" style="    margin-top: 2em;
+                                        margin-bottom: 2em;">
+                                            Paid
+                                        </div>
+                                        {%else%}
+                                        <div class="badge badge-danger" style="    margin-top: 2em;
+                                        margin-bottom: 2em;">
+                                            Unpaid
+                                        </div>
+                                        {%endif%}
+
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+
+
+
+
+
+                                <div class="btn btn-primary form-control" style="margin-bottom: 1em;">
+                                    Payment Details
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="info-box  col-md-4 col-sm-12 text-center">
+                                            <div class="icon"><i class="fa fa-credit-card-alt icon_label"
+                                                    aria-hidden="true"></i></div>
+                                            <div class="text">
+                                                <h4><b>Clearance Debt</b></h4>
+                                            </div>
+                                            {{ shipment.payments.clearance_debt }}
+                                        </div>
+
+                                        <div class="info-box  col-md-4 col-sm-12 text-center">
+                                            <div class="icon"><i class="fa fa-credit-card-alt icon_label"
+                                                    aria-hidden="true"></i></div>
+                                            <div class="text">
+                                                <h4><b>Recovery Debt</b></h4>
+                                            </div>
+                                            {{ shipment.payments.recovery_debt }}
+                                        </div>
+
+
+
+                                        <div class="info-box  col-md-4 col-sm-12 text-center">
+                                            <div class="icon"><i class="fa fa-credit-card-alt icon_label"
+                                                    aria-hidden="true"></i></div>
+                                            <div class="text">
+                                                <h4><b>Agent Debt</b></h4>
+                                            </div>
+                                            {{ shipment.payments.agency_debt }}
+                                        </div>
+
+                                        <div class="info-box  col-md-4 col-sm-12 text-center">
+                                            <div class="icon"><i class="fa fa-credit-card-alt icon_label"
+                                                    aria-hidden="true"></i></div>
+                                            <div class="text">
+                                                <h4><b>Requirements and Neccessities </b></h4>
+                                            </div>
+                                            {{ shipment.payments.requirements_and_neccessities }}
+                                        </div>
+
+                                        <div class="info-box  col-md-4 col-sm-12 text-center">
+                                            <div class="icon"><i class="fa fa-credit-card-alt icon_label"
+                                                    aria-hidden="true"></i></div>
+                                            <div class="text">
+                                                <h4><b>Auxillary </b></h4>
+                                            </div>
+                                            {{ shipment.payments.auxillaries }}
+                                        </div>
+
+
+                                        <div class="info-box  col-md-4 col-sm-12 text-center">
+                                            <div class="icon"><i class="fa fa-credit-card-alt icon_label"
+                                                    aria-hidden="true" style="color: #1a8000;
+                                                font-size: 5em;"></i></div>
+                                            <div class="text">
+                                                <h4><b>Total Payment: ${{ shipment.payments.get_payment_total }}</b>
+                                                </h4>
+                                            </div>
+                                            <div class="contact-container">
+                                                {% if shipment.is_paid %}
+                                                <img src="{%static 'images/paid.png'%}"
+                                                    style="width: 3em;height:3em;" />
+                                                {%else%}
+                                                <img src="{%static 'images/unpaid.png'%}"
+                                                    style="width: 3em;height:3em;" />
+                                                {%endif%}
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <style>
+                                            .badge {
+                                                padding: 0.5em !important;
+                                            }
+
+                                            .badge-success {
+                                                background-color: rgb(6, 214, 6);
+                                            }
+
+                                            .badge-danger {
+                                                background-color: rgb(230, 28, 68);
+                                            }
+                                        </style>
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+    </section>
+
+    <style>
+        @media only screen and (max-width: 762px) {
+            #shipment_details_table {
+                display: none !important;
+            }
+
+            #shipment_details_div {
+                display: block !important;
+            }
+        }
+    </style>
+
+
+
+    <link href="https://zoomcargo.s3.amazonaws.com/static/assets/css/main.css" rel="stylesheet">
+
+    <link href="https://zoomcargo.s3.amazonaws.com/static/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+        rel="stylesheet">
+    <link href="https://zoomcargo.s3.amazonaws.com/static/assets/vendor/fontawesome-free/css/all.min.css"
+        rel="stylesheet">
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5 col-md-12 footer-info">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span>{{ app_name }}</span>
+                    </a>
+                    <p>{{ app_name }} is the leading logistics Company in the world! We are a service provider with wide
+                        range of domestic and international Courier Services, Car Moving, Cargo, Relocation, Logistics
+                        and all types of transportion.</p>
+                    <div class="social-links d-flex mt-4">
+                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{% url 'about_us' %}">About us</a></li>
+                        <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Air Fleight</a></li>
+                        <li><a href="#">Ocean Fleight</a></li>
+                        <li><a href="#">Land Fleight</a></li>
+                        <li><a href="#">Cargo Fleight</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                    <h4>Contact Us</h4>
+                    <p>
+                        A108 Adam Street
+                        New York, NY 535022
+                        United States <br><br>
+                        <strong>Phone:</strong>{{phone_number}}<br>
+                        <strong>Email:</strong>{{ email }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="copyright">
+                &copy; Copyright <strong><span>{{ app_name }}</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://zoomcargo.s3.amazonaws.com/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://zoomcargo.s3.amazonaws.com/static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="https://zoomcargo.s3.amazonaws.com/static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="https://zoomcargo.s3.amazonaws.com/static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="https://zoomcargo.s3.amazonaws.com/static/assets/vendor/aos/aos.js"></script>
+    <script src="https://zoomcargo.s3.amazonaws.com/static/assets/vendor/php-email-form/validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js"></script>
+    <script>
+
+        mediumZoom(' img', {
+            margin: 24,
+            background: '#000',
+            scrollOffset: 0,
+            metaClick: false
+        })
+
+    </script>
+
+{% include 'helpers/__helper_buttons__.html'%}
+
+    <script src="https://zoomcargo.s3.amazonaws.com/static/assets/js/main.js"></script>
+</body>
+
+</html>
+
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/jquery.min.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/bootstrap.min.js"></script>
+
+<script
+    src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/bootstrap-dropdownhover.min.js"></script>
+
+<script type="text/javascript"
+    src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/easing.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/jquery.countTo.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/jquery.waypoints.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/jquery.appear.min.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/jquery.shuffle.min.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/carousel.min.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/jquery-migrate.min.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/color-switcher.js"></script>
+
+<script
+    src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/theia-sticky-sidebar.js"></script>
+
+<script src="https://templates.scriptsbundle.com/logistic-pro/demo/logistic-pro/js/custom.js"></script>
+</body>
+
+</html>
+<style>
+    #order-tracking {
+        background-image: url('https://zoomcargo.s3.amazonaws.com/static/delivery-boy.png');
+        background-repeat: no-repeat;
+        background-position: right;
+
+    }
+
+    .text-primary {
+        font-size: 1.4em;
+        margin-top: 2em;
+    }
+
+    footer .social-links:first-of-type {
+        display: none !important;
+    }
+
+
+
+    @media only screen and (max-width: 988px) {
+        #order-tracking {
+            background-image: none !important;
+        }
+    }
+</style>
