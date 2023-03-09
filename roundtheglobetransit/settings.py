@@ -19,8 +19,8 @@ SECRET_KEY = 'django-insecure-gq(p1+3l#37qb5+-r05e3@rq3dosahm+b!7o)4#^3_=yb8z(r6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://roundglobetransit.shop", "127.0.0.1","roundglobetransit.shop"]
-CSRF_TRUSTED_ORIGINS = ['https://roundglobetransit.shop',"http://127.0.0.1","https://roundglobetransit.shop",]
+ALLOWED_HOSTS = ["*","https://roundglobetransit.shop", "127.0.0.1","roundglobetransit.shop"]
+CSRF_TRUSTED_ORIGINS = ["*",'https://roundglobetransit.shop',"http://127.0.0.1","https://roundglobetransit.shop",]
 
 
 # Application definition
